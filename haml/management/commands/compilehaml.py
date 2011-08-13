@@ -17,11 +17,11 @@ def compile_haml():
     for basedir in basedirs:
         for dirpath, dirnames, filenames in os.walk(basedir):
             for f in filenames:
-                if f.endswith('.hamlpy'):
+                if f.endswith('.haml'):
                     sys.stderr.write('processing file %s in %s\n' % (f, dirpath))
                     pf = os.path.splitext(os.path.join(dirpath, f))[0]
     
-                    cmd = 'hamlpy %s.hamlpy %s.html' % (pf, pf) 
+                    cmd = 'hamlpy %s.haml %s.html' % (pf, pf) 
                     os.system(cmd)
 
 class Command(BaseCommand):
